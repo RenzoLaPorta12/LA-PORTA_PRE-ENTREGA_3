@@ -1,0 +1,34 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1 class="mt-5">Queremos su opinion!</h1>
+<a class="btn btn-primary" href="{% url 'reseñaForm' %}">publicar reseña</a>
+{% endblock titulo %}
+    
+
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Automovil</th>
+            <th>Usuario</th> 
+            <th>Puntuacion</th>
+            <th>Contenido</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Reseña %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.automovil }}</td>
+            <td>{{ u.usuario }}</td>
+            <td>{{ u.puntuacion }}</td>
+            <td>{{ u.contenido }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

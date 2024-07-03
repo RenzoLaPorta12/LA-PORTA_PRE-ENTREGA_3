@@ -1,0 +1,17 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1>Vender un auto nunca fue tan facil!</h1>
+<h5>Nuestro concesionario te ofrece una plataforma segura y eficiente pata publicar tu veiculo</h5>
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input class="btn btn-primary" type="submit" value="publicar">
+</form>
+{% endblock contenido %}

@@ -1,0 +1,38 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1 class="mt-5">Haga sus publicaciones!</h1>
+<a class="btn btn-primary" href="{% url 'automovilForm' %}">publicar</a>
+{% endblock titulo %}
+    
+
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Modelo</th> 
+            <th>Año</th>
+            <th>Precio</th>
+            <th>Descripcion</th>
+            <th>Vendedor</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Automovil %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.marca }}</td>
+            <td>{{ u.modelo }}</td>
+            <td>{{ u.año }}</td>
+            <td>{{ u.precio }}</td>
+            <td>{{ u.descripcion }}</td>
+            <td>{{ u.vendedor }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

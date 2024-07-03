@@ -1,0 +1,31 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1 class="mt-5">Crea tu cuenta ahora mismo y obten beneficios increibles!</h1>
+<a class="btn btn-primary" href="{% url 'usuarioForm' %}">registrarse</a>
+{% endblock titulo %}
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>nombre de usuario</th>
+            <th>Email</th> 
+            <th>Contraseña</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Usuario %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nombre_de_usuario }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.contraseña }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+    

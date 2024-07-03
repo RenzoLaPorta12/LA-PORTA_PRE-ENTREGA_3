@@ -1,0 +1,38 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1 class="mt-5">Bienvenido vendedor!</h1>
+<a class="btn btn-primary" href="{% url 'vendedorForm' %}">registrarse como vendedor</a>
+{% endblock titulo %}
+
+
+
+{% block contenido %}
+<h3>cree una cuenta y comienze a publicar!</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th> 
+            <th>Telefono</th>
+            <th>Direccion</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Vendedor %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nombre }}</td>
+            <td>{{ u.apellido }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.telefono }}</td>
+            <td>{{ u.direccion }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+    

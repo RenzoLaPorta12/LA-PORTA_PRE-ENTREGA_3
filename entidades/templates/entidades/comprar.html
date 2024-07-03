@@ -1,0 +1,33 @@
+{% extends 'entidades/index.html' %}
+
+
+{% block titulo %}
+<h1 class="mt-5">¿Cual sera tu nueva adquisición?</h1>
+<a class="btn btn-primary" href="{% url 'compraForm' %}">Comprar</a>
+{% endblock titulo %}
+    
+
+
+{% block contenido %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Automovil</th>
+            <th>Usuario</th> 
+            <th>Metodo de pago</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Compra %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.automovil }}</td>
+            <td>{{ u.usuario }}</td>
+            <td>{{ u.metodo_pago }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
+    
